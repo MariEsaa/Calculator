@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BackgroundColor="Orange">
 
-    <Grid Padding="10,20,10,20" BackgroundColor="Orange">
+    <Grid Padding="10,30,10,30" BackgroundColor="Orange">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -45,7 +45,6 @@
                             Grid.ColumnSpan="4" />
                     </StackLayout>
 
-                    <!--  1 ROW  -->
                     <Button
                         Grid.Row="2"
                         Grid.Column="0"
@@ -67,7 +66,6 @@
                         Clicked="OperationClick"
                         Text="/" />
 
-                    <!--  2 ROW  -->
                     <Button
                         Grid.Row="3"
                         Grid.Column="0"
@@ -89,7 +87,6 @@
                         Clicked="OperationClick"
                         Text="x" />
 
-                    <!--  3 ROW  -->
                     <Button
                         Grid.Row="4"
                         Grid.Column="0"
@@ -111,7 +108,6 @@
                         Clicked="OperationClick"
                         Text="-" />
 
-                    <!--  4 ROW  -->
                     <Button
                         Grid.Row="5"
                         Grid.Column="0"
@@ -132,8 +128,7 @@
                         Grid.Column="3"
                         Clicked="OperationClick"
                         Text="+" />
-
-                    <!--  5 ROW  -->
+                    
                     <Button
                         Grid.Row="6"
                         Grid.Column="0"
@@ -156,7 +151,36 @@
                         Text="=" />
                 </Grid>
 
-                
+                <Grid x:Name="HorizontalGridControll">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <StackLayout>
+                        <Label x:Name="OutputEquation_Label" />
+                        <Entry
+                            x:Name="Output_Label"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4" />
+                    </StackLayout>
+
+                    <Label Text="Esa" />
+                </Grid>
             </StackLayout>
         </Frame>
     </Grid>
