@@ -1,24 +1,164 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Calculator.MainPage">
+<ContentPage
+    x:Class="Calculator.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="Orange">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+    <Grid Padding="10,20,10,20" BackgroundColor="Orange">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Frame
+            Grid.Row="0"
+            BackgroundColor="White"
+            CornerRadius="20">
+            <StackLayout
+                x:Name="GridLayout"
+                Background="red"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid x:Name="VerticalGridControll">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <StackLayout>
+                        <Label x:Name="OutputEquation" />
+                        <Entry
+                            x:Name="Output"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4" />
+                    </StackLayout>
+
+                    <!--  1 ROW  -->
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Clicked="OperationClick"
+                        Text="x^2" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Clicked="OperationClick"
+                        Text="sqrt" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Clicked="ClearClick"
+                        Text="C" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="/" />
+
+                    <!--  2 ROW  -->
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Clicked="NumberClick"
+                        Text="7" />
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="8" />
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Clicked="NumberClick"
+                        Text="9" />
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="x" />
+
+                    <!--  3 ROW  -->
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Clicked="NumberClick"
+                        Text="4" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="5" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        Clicked="NumberClick"
+                        Text="6" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="-" />
+
+                    <!--  4 ROW  -->
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Clicked="NumberClick"
+                        Text="1" />
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="2" />
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="2"
+                        Clicked="NumberClick"
+                        Text="3" />
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="+" />
+
+                    <!--  5 ROW  -->
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Clicked="OperationClick"
+                        Text="1/x" />
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="0" />
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        Clicked="CommaClick"
+                        Text="," />
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="3"
+                        Clicked="EqualsClick"
+                        Text="=" />
+                </Grid>
+
+                
+            </StackLayout>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    </Grid>
 
 </ContentPage>
